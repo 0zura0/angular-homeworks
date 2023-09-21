@@ -8,11 +8,11 @@
 
     <div formGroupName="password">
       <label>
-        <span class="outSpan"><span *ngIf="hasPassError('password','required') || equals()" class="asteriks">*</span>Password</span>
+        <span class="outSpan"><span *ngIf="hasPassError('password','required') || ifequals()" class="asteriks">*</span>Password</span>
         <input formControlName="password" type="password">
       </label>
       <label>
-          <span class="outSpan"><span *ngIf="hasPassError('confirmPassword','required') || equals()" class="asteriks">*</span>Confirm Password</span>
+          <span class="outSpan"><span *ngIf="hasPassError('confirmPassword','required') || ifequals()" class="asteriks">*</span>Confirm Password</span>
         <input formControlName="confirmPassword" type="password">
       </label>
     </div>
@@ -36,9 +36,10 @@
   <input class="check" formControlName="checkBox" type="checkbox"> 
   <span class="agreement">I have read the agreement</span>
 </label>
-  <button 
+
+  <button  
   [disabled]="equals()"
-  (click)="onSubmit()" type="submit" class="but">submit</button>
+  (click)="onSubmit()" type="submit" class="but">{{buttonLabel}}</button>
   </form>
   <table>
     <tr>
@@ -48,14 +49,36 @@
       <th>Nickname</th>
       <th>Phone</th>
       <th>Website</th>
+      <th>actions</th>
     </tr>
-    <tr *ngFor="let obj of arr" let i = index>
-      <td>{{obj.Email}}</td>
-      <td>{{obj.password}}</td>
-      <td>{{obj.confirmPassword}}</td>
-      <td>{{obj.nickname}}</td>
-      <td>{{obj.phone}}</td>
-      <td>{{obj.website}}</td>
+    <tr *ngFor="let obj of arrayOfObject; let i = index">
+      <!-- MAIL IYO -->
+      <td >{{obj.Email}} </td>
+      <td >{{obj.password}}</td>
+      <td >{{obj.comfirmPass}}</td>
+      <td >{{obj.nickname}}</td>
+      <td >{{obj.phone}}</td>
+      <td ><span>{{obj.website}}</span></td>
+      <td class="actions">
+        <button (click)="edit(i)" class="buttOn">edit</button> 
+        <button (click)="deleteOject()" class="buttOn">delete</button>
+      </td>
+
+        <div *ngIf="deletionPopup" class="popup">
+          <span>This action will remove a user with this email: {{obj.Email}}</span>
+          <div class="innerDiv">
+            <button (click)="sureDEL()">delete</button>
+            <button (click)="cancel()">cancel</button>
+          </div>
+        </div>
+
+        <div *ngIf="sure" class="popup">
+        <span>are you sure?</span>
+        <div class="innerDiv">
+          <button (click)="del(i)">yes</button>
+          <button (click)="cancel()">no</button>
+        </div>
+        </div>
     </tr>
   </table>
 </div>
