@@ -1,0 +1,61 @@
+<div class="wrap">
+  <form [formGroup]="form" class="container">
+
+    <label>
+      <span class="outSpan"><span *ngIf="hasError('Email','required')" class="asteriks">*</span>E-mail</span>
+      <input formControlName="Email" type="text">
+    </label>
+
+    <div formGroupName="password">
+      <label>
+        <span class="outSpan"><span *ngIf="hasPassError('password','required') || equals()" class="asteriks">*</span>Password</span>
+        <input formControlName="password" type="password">
+      </label>
+      <label>
+          <span class="outSpan"><span *ngIf="hasPassError('confirmPassword','required') || equals()" class="asteriks">*</span>Confirm Password</span>
+        <input formControlName="confirmPassword" type="password">
+      </label>
+    </div>
+
+
+    <label>
+      <span class="outSpan"><span *ngIf="hasError('nickname','required')" class="asteriks">*</span>Nickname</span>
+      <input formControlName="nickname"  type="text">
+    </label>
+
+    <label>
+      <span class="outSpan"><span *ngIf="hasError('phone','required')" class="asteriks">*</span>Phone Number</span>
+      <input formControlName="phone" type="text">
+    </label>
+  
+    <label>
+    <span class="outSpan"><span *ngIf="hasError('website','required') "  class="asteriks">*</span>Website</span>
+    <input formControlName="website"  type="url" placeholder="Website">
+  </label>
+<label class="checkLabel">
+  <input class="check" formControlName="checkBox" type="checkbox"> 
+  <span class="agreement">I have read the agreement</span>
+</label>
+  <button 
+  [disabled]="equals()"
+  (click)="onSubmit()" type="submit" class="but">submit</button>
+  </form>
+  <table>
+    <tr>
+      <th>Email</th>
+      <th>Password</th>
+      <th>ConfirmPassword</th>
+      <th>Nickname</th>
+      <th>Phone</th>
+      <th>Website</th>
+    </tr>
+    <tr *ngFor="let obj of arr" let i = index>
+      <td>{{obj.Email}}</td>
+      <td>{{obj.password}}</td>
+      <td>{{obj.confirmPassword}}</td>
+      <td>{{obj.nickname}}</td>
+      <td>{{obj.phone}}</td>
+      <td>{{obj.website}}</td>
+    </tr>
+  </table>
+</div>

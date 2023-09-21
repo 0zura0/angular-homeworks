@@ -1,0 +1,56 @@
+.wrap{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        width: 500px;
+        display: flex;
+        flex-direction: column;
+    }
+    label{
+        display: flex;
+        justify-content:space-between;
+        margin-bottom: 20px;
+    }
+    input:not(.check){
+        width: 350px;
+        height: 25px;
+        border-radius: 5px;
+        border:1px solid gray;
+    }
+    .outSpan{
+        margin-top: 5px;
+    }
+    .asteriks{
+        color: red;
+    }
+    .but{
+        width: 60px;
+        height: 20px;
+    }
+    .agreement{
+        margin-left: 10px;
+    }
+    .check{
+        width: 20px;
+        height: 20px;
+    }
+    .checkLabel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    table{
+        margin-top: 50px;
+        width: 90%;
+    }
+    table, th, td {
+        border:1px solid black;
+      }
+
+}
+
+
