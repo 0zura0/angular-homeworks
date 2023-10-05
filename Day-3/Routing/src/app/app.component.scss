@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    background-color: rgb(131, 131, 238);
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .Routing{
+        width: 30%;
+        display: flex;
+        justify-content: space-around;
+    }
+    button{
+        display: block;
+        height: 40px;
+        width: 100px;
+        background-color:azure;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 37px;
+        text-decoration: none;
+        color: black;
+        font-family: sans-serif;
+    }
+    button:hover{
+        background-color: bisque;
+        cursor: pointer;
+    }
+    .navbar{
+        width: 30%;
+        height: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    
+}

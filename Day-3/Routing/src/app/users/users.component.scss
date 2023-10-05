@@ -1,0 +1,27 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    table{
+        width: 90vw;
+        border-style: solid;
+        .popup{
+            position: absolute;
+            width: 350px;
+            height: 200px;
+            left: 50%;
+            transform: translate(-50%,50%);
+            background-color: beige;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            border-radius: 5px;
+            border: 1px solid gray;
+        } 
+    }
+    table, th, td {
+        border:1px solid black;
+      }
+
+}

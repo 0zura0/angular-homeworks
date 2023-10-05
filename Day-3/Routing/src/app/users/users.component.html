@@ -1,0 +1,41 @@
+<div class="wrapper">
+<table>
+    <tr>
+      <th>Email</th>
+      <th>Password</th>
+      <th>ConfirmPassword</th>
+      <th>Nickname</th>
+      <th>Phone</th>
+      <th>Website</th>
+      <th>actions</th>
+    </tr>
+    <tr *ngFor="let obj of arrayUsers; let i = index" >
+      <td >{{obj.Email}} </td>
+      <td >{{obj.password}}</td>
+      <td >{{obj.confirmPassword}}</td>
+      <td >{{obj.nickname}}</td>
+      <td >{{obj.phone}}</td>
+      <td ><span>{{obj.website}}</span></td>
+      <td *ngIf="obj.Email==this.container.userGmails" class="actions">
+        <button (click)="edit(obj.Email)" class="buttOn">edit</button> 
+        <button (click)="deleteOject()" class="buttOn">delete</button>
+      </td>
+
+        <div *ngIf="deletionPopup && obj.Email ==this.container.userGmails" class="popup">
+          <span>This action will remove a user with this email: {{obj.Email}}</span>
+          <div class="innerDiv">
+            <button (click)="sureDEL()">delete</button>
+            <button (click)="cancel()">cancel</button>
+          </div>
+        </div>
+
+        <div *ngIf="sure && obj.Email ==this.container.userGmails" class="popup">
+        <span>are you sure?</span>
+        <div class="innerDiv">
+          <button (click)="del(obj.Email)">yes</button>
+          <button (click)="cancel()">no</button>
+        </div>
+        </div>
+    </tr>
+  </table>
+</div>

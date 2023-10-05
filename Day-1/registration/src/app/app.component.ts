@@ -21,6 +21,7 @@ export class AppComponent {
   public sure :boolean | null = null;
   private index:number=0;
   public formdisabled=false;
+  
   public form = this.formBuilder.group({
     Email:["", [Validators.required, Validators.email]],
     nickname:['',[Validators.required,Validators.pattern('^[a-zA-Z0-9]*$')]],

@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <div class="Routing">
+    <div class="container">
+    <button *ngIf="this.cont.isCurrency" (click)="Curency()" class="link" href="">Currency</button>
+  </div>
+  <div class="container">
+    <button *ngIf="this.cont.isUser" (click)="Users()" class="link" href="">Users</button>
+  </div>
+  </div>
+<div class="navbar">
+  <div>
+    <button *ngIf="this.cont.islogin" (click)="LogIn()"  class="container" class="link" href="">LogIn</button>
+  </div>
+  <div class="container">
+    <button *ngIf="this.cont.isUser" (click)="logOutOperation()" class="link" href="">LogOut</button>
+  </div>
+</div>
+</div>
+
+<router-outlet></router-outlet>
