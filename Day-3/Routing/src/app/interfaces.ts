@@ -6,3 +6,10 @@ export interface IUser{
     phone: string | null | undefined;
     website: string | null | undefined;
 }
+
+export interface IEmployee{
+    id?:number;
+    Name: string;
+    Salary: number;
+    Age: number;
+}

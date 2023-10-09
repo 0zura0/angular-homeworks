@@ -9,6 +9,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './users/users.component';
 import { CurrencyComponent } from './currency/currency.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './table/table.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { LoginEmployeeComponent } from './login-employee/login-employee.component';
 
 @NgModule({
   declarations: [
@@ -16,14 +19,17 @@ import { HttpClientModule } from '@angular/common/http';
     LogInComponent,
     RegisterComponent,
     UsersComponent,
-    CurrencyComponent
+    CurrencyComponent,
+    EmployeeComponent,
+    TableComponent,
+    LoginEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

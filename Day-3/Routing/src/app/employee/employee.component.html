@@ -1,0 +1,30 @@
+<div class="container">
+    <div [formGroup]="form"  class="wrapper">
+        <h1>Register</h1>
+        <div>
+            <div class="content">
+               <span><span *ngIf="hasError('Name','required')" class="asterisk" style="color:red">*</span>Name</span>
+                <input formControlName="Name" type="text">
+            </div>
+            <span *ngIf="hasError('Name','pattern')" class="warn">please use only characters and numbers</span>
+            <span *ngIf="hasError('Name','required')" class="warn">This Field is Required</span>
+        </div>
+        <div>
+            <div class="content">
+               <span><span *ngIf="hasError('salary','required')" class="asterisk" style="color:red">*</span>Salary</span>
+                <input formControlName="salary" type="text">
+            </div>
+            <span *ngIf="hasError('salary','pattern')" class="warn">please use only numbers</span>
+            <span *ngIf="hasError('salary','required')" class="warn">This Field is Required</span>
+        </div>
+        <div>
+            <div class="content">
+               <span><span *ngIf="hasError('Age','required')" class="asterisk" style="color:red">*</span>Age</span>
+                <input formControlName="Age" type="text">
+            </div>
+            <span *ngIf="hasError('Age','pattern')" class="warn">please use only numbers</span>
+            <span *ngIf="hasError('Age','required')" class="warn">This Field is Required</span>
+        </div>
+        <button (click)="onSubmit()">{{bottonLabel}}</button>
+    </div>
+</div>

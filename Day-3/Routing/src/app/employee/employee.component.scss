@@ -1,0 +1,22 @@
+.container{
+    display: flex;
+    // background-color: red;
+    justify-content: center;
+    margin-top: 100px;
+    .wrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    .content{
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+    }
+    .warn{
+        display: inline-block;
+        font-size: 13px;
+        width: 100%;
+        text-align: end;
+    }
+}
+}

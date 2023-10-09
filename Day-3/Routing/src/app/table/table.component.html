@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+        <!-- <tr *ngFor="let obj of this.EmpService.LocalUserContainer; let i = index" ></tr> -->
+        <tr *ngFor="let obj of getDataSlice(); let i = index" >
+            <td>{{obj.id}}</td>
+            <td>{{obj.Name}}</td>
+            <td>{{obj.Salary}}</td>
+            <td>{{obj.Age}}</td>
+            <td class="actions">
+                <button (click)="NavToUpdate(obj.id,obj.Name,obj.Salary,obj.Age)"  class="buttOn">edit</button> 
+                <button (click)="DeleteObject(obj.id)"  class="buttOn">delete</button>
+              </td>
+        </tr>
+    </table>
+
+    <div>
+        <button (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous</button>
+      
+        <button *ngFor="let page of getPageNumbers()" (click)="goToPage(page)" [disabled]="currentPage === page">{{ page }}</button>
+      
+        <button (click)="goToNextPage()" [disabled]="currentPage === getTotalPages()">Next</button>
+      </div>
+
+
+
+</div>

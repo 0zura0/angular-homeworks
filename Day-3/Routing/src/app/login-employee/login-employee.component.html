@@ -1,0 +1,20 @@
+<div class="container">
+    <div [formGroup]="form"  class="wrapper">
+        <h1>Log In</h1>
+            <div class="content">
+                <input formControlName="Name" type="text" placeholder="Name">
+            </div>
+
+            <div class="content">
+                <input formControlName="salary" type="text" placeholder="salary">
+            </div>
+        
+        
+            <div class="content">
+                <input formControlName="Age" type="text" placeholder="Age">
+            </div>
+
+        <button (click)="onSubmit()">Log in</button>
+        <button (click)="Register()">Resister</button>
+    </div>
+</div>

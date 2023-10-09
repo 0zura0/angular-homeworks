@@ -30,4 +30,9 @@ export class AppComponent {
   this.cont.isUser=false;
   this.router.navigate(['Login'])
  }
+
+
+ public Employee(){
+  this.router.navigate(['employees']);
+ }
 }
