@@ -2,15 +2,9 @@
   "Employee": [
     {
       "id": 1,
-      "Name": "zura12",
-      "Salary": 18,
-      "Age": 2
-    },
-    {
-      "Name": "nana",
+      "Name": "tako2007",
       "Salary": 122,
-      "Age": 12,
-      "id": 1
+      "Age": 12
     },
     {
       "Name": "tako",
@@ -77,6 +71,18 @@
       "Salary": 2000,
       "Age": 12,
       "id": 2
+    },
+    {
+      "Name": "zura",
+      "Salary": 2000,
+      "Age": 18,
+      "id": 3
+    },
+    {
+      "Name": "zura",
+      "Salary": 12,
+      "Age": 13,
+      "id": 4
     }
   ]
 }
