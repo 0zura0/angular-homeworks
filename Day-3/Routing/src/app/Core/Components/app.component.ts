@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { UsersmapService } from '../../shared/Services/usersmap.service';
 import { Router, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./app.component.scss'],
   standalone:true,
   imports:[ReactiveFormsModule,RouterModule,CommonModule,FormsModule,HttpClientModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'Routing';
