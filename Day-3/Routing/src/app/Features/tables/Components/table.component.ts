@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../../../shared/Services/employee.service';
-import { IEmployee } from '../../../shared/interfaces/interfaces';
 import { Router } from '@angular/router';
 import { UsersmapService } from '../../../shared/Services/usersmap.service';
 import { CommonModule } from '@angular/common';
@@ -10,7 +9,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss'],
   standalone: true,
-  imports:[CommonModule]
+  imports:[CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 
 export class TableComponent implements OnInit{
@@ -23,13 +23,15 @@ totalItems=0
 
 constructor(public EmpService:EmployeeService,
             private router:Router,
-            private MapService: UsersmapService
+            private MapService: UsersmapService,
+            private chd:ChangeDetectorRef
             ) {}
 
   ngOnInit(): void {
     this.EmpService.getAllUsers().subscribe(users =>{
       this.EmpService.LocalUserContainer=users;
       this.totalItems = this.EmpService.LocalUserContainer.length; 
+      this.chd.detectChanges();
     })
   }
 

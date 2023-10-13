@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormsModule, ReactiveFormsModule, ValidatorFn, Validators } from '@angular/forms';
 import { IUser } from '../../../shared/interfaces/interfaces';
 import { UsersmapService } from '../../../shared/Services/usersmap.service';
@@ -10,7 +10,8 @@ import { CommonModule } from '@angular/common';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
   standalone: true,
-  imports:[ReactiveFormsModule,CommonModule]
+  imports:[ReactiveFormsModule,CommonModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class RegisterComponent implements OnInit {
   private isSubmited=false;

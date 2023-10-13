@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { EmployeeService } from '../../../shared/Services/employee.service';
@@ -13,6 +13,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
   styleUrls: ['./employee.component.scss'],
   standalone: true,
   imports:[ReactiveFormsModule,CommonModule,HttpClientModule],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class EmployeeComponent implements OnInit {
 

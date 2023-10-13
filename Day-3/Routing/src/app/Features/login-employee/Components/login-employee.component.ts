@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { EmployeeService } from '../../../shared/Services/employee.service';
@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./login-employee.component.scss'],
   standalone: true,
   imports:[ReactiveFormsModule,HttpClientModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LoginEmployeeComponent implements OnInit{
 

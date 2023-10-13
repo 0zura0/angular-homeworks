@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit } from '@angular/core';
+import { AfterViewChecked, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UsersmapService } from '../../../shared/Services/usersmap.service';
 import { Router } from '@angular/router';
 import { IUser } from '../../../shared/interfaces/interfaces';
@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./users.component.scss'],
   standalone: true,
   imports: [CommonModule],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UsersComponent implements OnInit {
 public arrayUsers = Array.from(this.container.myContainer.values());

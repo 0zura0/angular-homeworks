@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { CurrencyService } from '../Services/currency.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 
   standalone: true,
   imports: [ReactiveFormsModule,FormsModule,HttpClientModule,CommonModule],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 
 export class CurrencyComponent {
@@ -21,14 +22,16 @@ export class CurrencyComponent {
   amount1: number = 0;
   amount2: number = 0;
 
-  constructor(private currencyService: CurrencyService){}
+  constructor(private currencyService: CurrencyService,
+              private chd :ChangeDetectorRef          
+    ){}
 
   ngOnInit(): void {
     this.currencyService.getExchangeRates().subscribe((data: any) => {
       this.currencies = Object.keys(data.conversion_rates);
       this.CurrencyMap = data.conversion_rates;
       console.log(this.CurrencyMap);
-      
+      this.chd.detectChanges();
     });
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersComponent } from '../../users/Components/users.component';
@@ -10,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
   templateUrl: './log-in.component.html',
   styleUrls: ['./log-in.component.scss'],
   standalone: true,
-  imports:[ReactiveFormsModule,HttpClientModule]
+  imports:[ReactiveFormsModule,HttpClientModule],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class LogInComponent implements OnInit {
   constructor(private router: Router,private formbuilder: FormBuilder, private container : UsersmapService){}
